@@ -102,6 +102,8 @@ WORK AUTHORIZATION
 - Never guess sponsorship eligibility.
 
 APPLICATION VOLUME
+MAX_APPLICATIONS_PER_RUN=5
+MAX_APPLICATIONS_PER_DAY=10
 - Maximum applications per run: 5
 - Maximum applications per day: 10
 - Auto-apply threshold: 85/100
