@@ -1,5 +1,5 @@
 {
   "name": "Job Hunt",
   "user": "ubuntu",
-  "install": "python3 -m pip install --user --disable-pip-version-check -r requirements.txt && python3 -m py_compile scripts/build_resume_pdf.py scripts/validate_config.py && python3 scripts/validate_config.py"
+  "install": "{ python3 -c \"import ensurepip\" >/dev/null 2>&1 || { sudo DEBIAN_FRONTEND=noninteractive apt-get update && sudo DEBIAN_FRONTEND=noninteractive apt-get install -y python3-venv; }; } && python3 -m venv .venv && .venv/bin/python -m pip install --disable-pip-version-check -r requirements.txt && .venv/bin/python -m py_compile scripts/build_resume_pdf.py scripts/validate_config.py && .venv/bin/python scripts/validate_config.py"
 }
