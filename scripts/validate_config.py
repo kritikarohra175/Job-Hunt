@@ -113,7 +113,10 @@ def main() -> int:
         check(not (REPO_ROOT / name).exists(), f"stale root file absent: {name}")
 
     runtime = read("config/runtime.md") if (REPO_ROOT / "config/runtime.md").is_file() else ""
-    check(setting(runtime, "RUN_MODE") == "REVIEW_ONLY", "RUN_MODE=REVIEW_ONLY")
+    mode = setting(runtime, "RUN_MODE")
+    check(mode in {"REVIEW_ONLY", "LIVE"}, f"RUN_MODE is REVIEW_ONLY or LIVE (found {mode})")
+    if mode == "REVIEW_ONLY":
+        print("PASS  current RUN_MODE=REVIEW_ONLY")
     check(setting(runtime, "MAX_APPLICATIONS_PER_RUN") == "5", "MAX_APPLICATIONS_PER_RUN=5")
     check(setting(runtime, "MAX_APPLICATIONS_PER_DAY") == "10", "MAX_APPLICATIONS_PER_DAY=10")
     check(setting(runtime, "AUTO_APPLY_THRESHOLD") == "85", "AUTO_APPLY_THRESHOLD=85")
@@ -261,6 +264,28 @@ def main() -> int:
         "PDF builder self-test generates and validates a real PDF"
         + (f" ({self_test.stderr.strip()})" if self_test.returncode else ""),
     )
+
+    incomplete_files = []
+    for relative in (
+        "config/job_preferences.md",
+        "config/answer_bank.md",
+        "config/target_config_block.md",
+        "config/runtime.md",
+    ):
+        text = read(relative) if (REPO_ROOT / relative).is_file() else ""
+        if any(marker in text for marker in ("TODO", "NOT CONFIGURED", "NOT_CONFIGURED")):
+            incomplete_files.append(relative)
+    if mode == "LIVE":
+        check(
+            not incomplete_files,
+            "LIVE mode has no TODO or unconfigured required fields"
+            + (f": {incomplete_files}" if incomplete_files else ""),
+        )
+    elif incomplete_files:
+        print(
+            "NOTE  REVIEW_ONLY is allowing incomplete user fields: "
+            + ", ".join(incomplete_files)
+        )
 
     print("")
     if failures:

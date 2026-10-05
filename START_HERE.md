@@ -1,6 +1,8 @@
 # START HERE
 
-The repository layout is already in place. Do not recreate it from an older zip or from loose root files.
+The repository layout is already in place. Do not flatten `config/`, `data/`, `prompts/`, `templates/`, `scripts/`, `reference/`, or `.cursor/`.
+
+In Cursor Automation, select repository `kritikarohra175/Job-Hunt` and branch `main`. Do not use a stale `cursor/...` feature branch, including `cursor/digital-marketing-resume-automation-b93f`, as the recurring automation branch.
 
 ## Authoritative resume
 
@@ -10,7 +12,7 @@ Do not replace it with an older resume.
 
 ## Mode
 
-`config/runtime.md` is set to `RUN_MODE=REVIEW_ONLY`. Leave it there until a review-only run has been checked. Do not submit applications in that mode.
+`config/runtime.md` is set to `RUN_MODE=REVIEW_ONLY`. Leave it there for the next two review-only tests. Do not submit applications in that mode. Change it to `LIVE` only after those tests and the missing user fields are done.
 
 ## Still required before LIVE submission
 

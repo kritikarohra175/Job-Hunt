@@ -11,8 +11,8 @@ LinkedIn: https://www.linkedin.com/in/karinarohra-485282214/
 
 ## Education
 
-Current education: MBA – Digital Marketing, Dr. D. Y. Patil Vidyapeeth – Centre for Online Learning, Jan 2026 – Mar 2028, currently pursuing.
-Previous education: Bachelor of Business Administration, The Maharaja Sayajirao University of Baroda, Nov 2020 – May 2023.
+Current education: MBA – Digital Marketing, Dr. D Y Patil Vidyapeeth – Centre for Online Learning, Jan 2026 – Mar 2028, currently pursuing.
+Previous education: Bachelor of Business Administration - Marketing-Relevant Business Degree, The Maharaja Sayajirao University of Baroda, Nov 2020 – May 2023.
 
 ## Why digital marketing?
 
@@ -22,26 +22,34 @@ Draft from verified profile only: The candidate is building a long-term career i
 
 Draft from verified profile only: The candidate enjoys developing social content ideas, captions, carousels, Reels and short-form concepts, researching audiences and competitors, and understanding how content performs across platforms.
 
+## Why this company?
+
+Personalize only from facts in the job description or on the company site. Never invent company knowledge.
+
 ## Availability
 
-Approved answer, taken from the final resume: Immediately.
-Do not substitute a different availability.
+APPROVED ANSWER: Immediately.
+This is stated on the final resume. Do not substitute a different availability.
 
 ## Salary expectation
 
 NOT CONFIGURED. Do not guess.
+Salary expectation: TODO
 
 ## Work authorization
 
 NOT CONFIGURED. Stop unless the user provides an exact approved answer.
+Work authorization: TODO
 
 ## Visa sponsorship
 
 NOT CONFIGURED. Stop unless the user provides an exact approved answer.
+Visa sponsorship: TODO
 
 ## Relocation
 
 NOT CONFIGURED. Do not guess.
+Relocation: TODO
 
 ## Sensitive questions
 

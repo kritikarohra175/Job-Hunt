@@ -127,10 +127,16 @@ Do not use an older resume. The structured JSON is builder input. It is not the 
 
 ## 7. Generate real PDF
 
-Run `scripts/build_resume_pdf.py` so the tailored resume is a real PDF under `output/resumes/`.
+Run:
+
+`python3 scripts/build_resume_pdf.py --input output/resumes/<job>.json --output output/resumes/Karina_Rohra_<Company>_<Role>.pdf`
+
+The JSON file is builder input only. Never attach it.
 
 Use a filename like `Karina_Rohra_<Company>_<Role>.pdf`.
-Never overwrite `reference/Karina_Rohra_Digital_Marketing_Resume_FINAL.pdf`.
+Keep the local PDF under `output/resumes/`.
+When Google Drive is available, also store that PDF in `Job Applications/Tailored Resumes/`.
+Never overwrite `reference/Karina_Rohra_Digital_Marketing_Resume_FINAL.pdf` or `Job Applications/Master Resume/`.
 Never attach Markdown, TXT, or JSON as the resume.
 
 ## 8. Validate PDF

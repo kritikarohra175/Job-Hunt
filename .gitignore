@@ -5,3 +5,13 @@ __pycache__/
 .env
 .env.*
 *.pem
+*.key
+*credentials*.json
+*token*.json
+cookies*
+browser-profile*/
+*.log
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

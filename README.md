@@ -15,7 +15,7 @@ MAX_APPLICATIONS_PER_DAY=10
 AUTO_APPLY_THRESHOLD=85
 ```
 
-`REVIEW_ONLY` never submits an application and never clicks a final Submit or Apply button. `LIVE` may submit only when every application rule and hard stop is satisfied.
+`REVIEW_ONLY` never submits an application and never clicks a final Submit or Apply button. Run two review-only tests before changing the mode. `LIVE` may submit only when every application rule and hard stop is satisfied and the missing user fields are filled.
 
 ## Tracker
 

@@ -28,7 +28,10 @@ The authoritative resume file inside this repository is `reference/Karina_Rohra_
 Do not replace it with an older resume from Drive.
 Do not overwrite that file from an automation run.
 
-A Drive folder such as `Job Applications/Master Resume/` may hold a private copy of the same final PDF. If Drive and this repository disagree, stop and ask. Do not merge resume versions.
+Drive folders:
+
+- `Job Applications/Master Resume/` may hold a private copy of the same final PDF. If Drive and this repository disagree, stop and ask. Do not merge resume versions.
+- `Job Applications/Tailored Resumes/` is the archive for generated application PDFs.
 
 ### 3. Gmail
 

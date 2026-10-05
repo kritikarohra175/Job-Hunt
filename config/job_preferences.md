@@ -48,34 +48,32 @@ Reject automatic application when the role clearly requires more than 2 years.
 
 REQUIRED CONFIGURATION — fill this section before enabling automatic submission.
 
-Target locations:
-- TODO
+TARGET_LOCATIONS=TODO
+ACCEPT_REMOTE=TODO
+ACCEPT_HYBRID=TODO
+ACCEPT_ONSITE=TODO
+OPEN_TO_RELOCATION=TODO
+ACCEPTED_COUNTRIES=TODO
+ACCEPTED_CITIES=TODO
 
-Accept remote roles: TODO
-Accept hybrid roles: TODO
-Accept on-site roles: TODO
-Open to relocation: TODO
-Countries accepted: TODO
-Cities accepted: TODO
-
-Until these fields are completed, the agent may collect and score jobs but must not auto-submit solely on the basis of location fit.
+Until these fields are completed, the agent may collect and score jobs but must not treat location fit as resolved and must not submit.
 
 ## Salary
 
 REQUIRED CONFIGURATION — fill before automatic submission.
 
-Minimum acceptable salary/month (INR): TODO
-Preferred salary/month (INR): TODO
-International salary rule: TODO
+MIN_MONTHLY_SALARY_INR=TODO
+PREFERRED_MONTHLY_SALARY_INR=TODO
+INTERNATIONAL_SALARY_RULE=TODO
 
 If salary is not disclosed, do not invent a salary. Use the application answer bank or route for review if a salary field is mandatory.
 
 ## Work schedule
 
-Preferred shifts: TODO
-Maximum workdays/week: TODO
-Accept night shifts: TODO
-Accept rotational shifts: TODO
+PREFERRED_SHIFTS=TODO
+MAX_WORKDAYS_PER_WEEK=TODO
+ACCEPT_NIGHT_SHIFTS=TODO
+ACCEPT_ROTATIONAL_SHIFTS=TODO
 
 ## Application volume
 

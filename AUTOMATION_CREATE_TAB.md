@@ -10,8 +10,7 @@ Attach this private GitHub repository. The automation branch is `main`.
 
 ## Model
 
-Preferred: a current high-capability thinking model.
-Do not use a low-cost model for the end-to-end application run.
+Use Claude Sonnet 4.6 for the current known-good test, or Auto if Cursor should choose the model. Do not switch models while debugging the workflow unless necessary.
 
 ## Computer Use
 
