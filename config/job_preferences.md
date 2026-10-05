@@ -44,47 +44,64 @@ If the JD states 1–2 years or equivalent but the role is clearly junior and th
 
 Reject automatic application when the role clearly requires more than 2 years.
 
-## Location
+TARGET LOCATIONS
 
-REQUIRED CONFIGURATION — fill this section before enabling automatic submission.
+India:
+- Vadodara
+- Ahmedabad
+- Mumbai
+- Pune
+- Bangalore
 
-TARGET_LOCATIONS=TODO
-ACCEPT_REMOTE=TODO
-ACCEPT_HYBRID=TODO
-ACCEPT_ONSITE=TODO
-OPEN_TO_RELOCATION=TODO
-ACCEPTED_COUNTRIES=TODO
-ACCEPTED_CITIES=TODO
+International:
+- Dubai, UAE
+- Seoul, South Korea
+- New York, USA
+- Toronto, Canada
+- Vancouver, Canada
+- London, UK
+- Paris, France
+- Sydney, Australia
+- Other suitable locations across Europe
 
-Until these fields are completed, the agent may collect and score jobs but must not treat location fit as resolved and must not submit.
+WORK ARRANGEMENT
+- Remote: YES
+- Hybrid: YES
+- On-site: YES
 
-## Salary
+RELOCATION
+- Open to relocation: YES
+- Open to international relocation: YES
+- Prioritize roles that provide relocation assistance or employer-supported work authorization when required.
+- Do not reject a strong international opportunity solely because relocation support is not explicitly mentioned; evaluate the role separately.
 
-REQUIRED CONFIGURATION — fill before automatic submission.
+SALARY
+- Minimum acceptable salary in India: ₹20,000/month
+- Preferred salary: evaluate against the prevailing market range for the specific role and location.
+- International salary: evaluate against the prevailing market range for the specific role and location.
+- Never invent a salary range.
+- When salary is disclosed, compare it against the candidate's minimum and the local market.
+- When salary is not disclosed, do not assume it fails the salary requirement.
+- When an application requires a salary expectation, use the approved salary-answer wording in answer_bank.md.
 
-MIN_MONTHLY_SALARY_INR=TODO
-PREFERRED_MONTHLY_SALARY_INR=TODO
-INTERNATIONAL_SALARY_RULE=TODO
+WORK SCHEDULE
+- Preferred: Day shift
+- Night shifts: YES, but only for fully remote roles
+- Rotational shifts: YES, but only for fully remote roles
+- Maximum workdays per week: 5
+- Do not automatically reject a role solely because the shift is not stated; verify before applying.
 
-If salary is not disclosed, do not invent a salary. Use the application answer bank or route for review if a salary field is mandatory.
+AVAILABILITY
+- Immediately: YES
 
-## Work schedule
+WORK AUTHORIZATION
+- India: Authorized to work in India.
+- International: No current international work authorization.
+- For countries where authorization/sponsorship is required, the candidate may require employer-sponsored work authorization.
+- Never claim existing international work authorization.
+- Never guess sponsorship eligibility.
 
-PREFERRED_SHIFTS=TODO
-MAX_WORKDAYS_PER_WEEK=TODO
-ACCEPT_NIGHT_SHIFTS=TODO
-ACCEPT_ROTATIONAL_SHIFTS=TODO
-
-## Application volume
-
-The only numeric caps are in `config/runtime.md`:
-
-MAX_APPLICATIONS_PER_RUN=5
-MAX_APPLICATIONS_PER_DAY=10
-
-Do not exceed these without an explicit edit to that file.
-
-## Recruiter outreach
-
-Disabled by default.
-Do not send cold recruiter messages as part of this automation unless explicitly enabled.
+APPLICATION VOLUME
+- Maximum applications per run: 5
+- Maximum applications per day: 10
+- Auto-apply threshold: 85/100
