@@ -32,3 +32,9 @@ Do not send recruiter outreach messages unless explicitly enabled in the configu
 ## Files
 
 Generated artifacts should be stored under `output/` in the automation workspace or in the configured Google Drive folders. Do not overwrite the master resume.
+
+## Cursor Cloud specific instructions
+
+The Git checkout stores control files at the repository root. Install links them into `config/`, `data/`, `prompts/`, `templates/`, `.cursor/rules/`, and `reference/`, and copies `validate_config.py` and `build_resume_pdf.py` into `scripts/` when those paths are missing. Do not commit those links, copies, or files under `output/`.
+
+`python3`, `pdftotext`, `reportlab`, and `pypdf` are available after install. Check configuration with `python3 scripts/validate_config.py`. Build a tailored resume with `python3 scripts/build_resume_pdf.py`. `config/runtime.md` stays `RUN_MODE=REVIEW_ONLY` until the user changes it, so remaining `TODO` answers block submission. There is no dev server.
