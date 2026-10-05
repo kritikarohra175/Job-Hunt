@@ -2,7 +2,14 @@
 
 ## Operating mode
 
-Default mode: QUALITY-FIRST AUTO APPLICATION WITH HARD STOPS.
+Operating mode: REVIEW ONLY.
+
+During REVIEW ONLY mode:
+- Never submit an application.
+- Never click a final Submit / Apply button.
+- Perform job discovery, filtering, scoring, resume tailoring, and form preparation.
+- Record what would have been submitted in the tracker.
+- Stop immediately before final submission.
 
 The agent may submit a routine application only when all of the following are true:
 
