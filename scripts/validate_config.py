@@ -188,7 +188,7 @@ def main() -> int:
     pdfs = [
         path
         for path in REPO_ROOT.rglob("*.pdf")
-        if ".git" not in path.parts and "output" not in path.parts
+        if ".git" not in path.parts and "output" not in path.parts and ".venv" not in path.parts
     ]
     check(
         pdfs == [REPO_ROOT / "reference" / "Karina_Rohra_Digital_Marketing_Resume_FINAL.pdf"],
@@ -199,9 +199,12 @@ def main() -> int:
         environment = json.loads(read(".cursor/environment.json"))
         install = environment.get("install", "")
         environment_ok = (
-            "requirements.txt" in install
+            "python3-venv" in install
+            and "python3 -m venv .venv" in install
+            and ".venv/bin/python -m pip install" in install
+            and "requirements.txt" in install
+            and "scripts/build_resume_pdf.py" in install
             and "scripts/validate_config.py" in install
-            and "python3 -m pip install" in install
         )
     except (json.JSONDecodeError, OSError):
         environment_ok = False
@@ -230,7 +233,7 @@ def main() -> int:
     for path in REPO_ROOT.rglob("*"):
         if not path.is_file() or path.suffix.lower() not in TEXT_SUFFIXES:
             continue
-        if ".git" in path.parts or "output" in path.parts:
+        if ".git" in path.parts or "output" in path.parts or ".venv" in path.parts:
             continue
         if SECRET_PATTERN.search(path.read_text(encoding="utf-8", errors="ignore")):
             secret_hits.append(str(path.relative_to(REPO_ROOT)))

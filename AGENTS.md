@@ -37,6 +37,16 @@ AUTO_APPLY_THRESHOLD=85
 
 Never invent employment, experience, metrics, clients, revenue, certifications, tools, degrees, responsibilities, results, dates, job titles, portfolio work, or qualifications. Never turn weak familiarity into professional experience. Never answer a factual application question by guessing. Stop when a required fact is missing.
 
+## Cloud Agent Python
+
+During Cloud Agent execution, run repository Python commands with `.venv/bin/python`.
+
+The Cloud Environment install creates `.venv` and installs `requirements.txt` into that environment. Use that interpreter for repository scripts:
+
+- `.venv/bin/python scripts/validate_config.py`
+- `.venv/bin/python scripts/build_resume_pdf.py`
+- `.venv/bin/python -m py_compile scripts/build_resume_pdf.py scripts/validate_config.py`
+
 ## PDF resume workflow
 
 Tailor only from verified candidate facts.
