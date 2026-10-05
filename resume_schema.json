@@ -1,0 +1,16 @@
+{
+  "name": "string",
+  "headline": "string",
+  "contact": "string",
+  "summary": "string",
+  "skills": {"Category": "verified skills"},
+  "experience": [
+    {"title": "string", "company": "string", "dates": "string", "bullets": ["string"]}
+  ],
+  "ai_experience": ["string"],
+  "education": [
+    {"degree": "string", "institution": "string", "dates": "string", "detail": "optional string"}
+  ],
+  "certifications": ["string"],
+  "portfolio": "string"
+}

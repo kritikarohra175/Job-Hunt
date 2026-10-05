@@ -1,33 +1,10 @@
-# REQUIRED USER CONFIGURATION
+# User Configuration Checklist
 
-Replace every `TODO` before turning on autonomous submission.
+Complete the following in `config/job_preferences.md` and `config/answer_bank.md` before LIVE mode:
 
-## Locations
-TARGET_LOCATIONS=
-ACCEPT_REMOTE=
-ACCEPT_HYBRID=
-ACCEPT_ONSITE=
-OPEN_TO_RELOCATION=
-ACCEPTED_COUNTRIES=
-ACCEPTED_CITIES=
+Locations: target cities/countries and remote/hybrid/on-site preferences.
+Compensation: minimum/preferred salary and international salary rule.
+Schedule: preferred shifts, workdays, night/rotational shift acceptance.
+Application answers: salary expectation, work authorization, visa sponsorship, relocation.
 
-## Compensation
-MIN_MONTHLY_SALARY_INR=
-PREFERRED_MONTHLY_SALARY_INR=
-INTERNATIONAL_SALARY_RULE=
-
-## Schedule / workplace
-PREFERRED_SHIFTS=
-MAX_WORKDAYS_PER_WEEK=
-ACCEPT_NIGHT_SHIFTS=
-ACCEPT_ROTATIONAL_SHIFTS=
-
-## Application answers
-AVAILABILITY=
-WORK_AUTHORIZATION=
-VISA_SPONSORSHIP=
-RELOCATION_ANSWER=
-SALARY_EXPECTATION=
-
-## Outreach
-RECRUITER_OUTREACH_ENABLED=NO
+Do not invent or infer any missing value.

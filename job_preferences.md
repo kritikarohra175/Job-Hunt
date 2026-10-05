@@ -40,50 +40,32 @@ AI-assisted Marketing roles that are genuinely marketing roles
 Preferred: 0 years / fresher / internship experience accepted.
 Maximum automatic-apply threshold: 1 year.
 
-If the JD states 1–2 years or equivalent but the role is clearly junior and the employer appears flexible, route to REVIEW instead of auto-submit.
-
+If the JD states 1–2 years but the role is clearly junior/flexible, route to REVIEW instead of auto-submit.
 Reject automatic application when the role clearly requires more than 2 years.
 
-## Location
+## Location — USER MUST COMPLETE
+TARGET_LOCATIONS=TODO
+ACCEPT_REMOTE=TODO
+ACCEPT_HYBRID=TODO
+ACCEPT_ONSITE=TODO
+OPEN_TO_RELOCATION=TODO
+ACCEPTED_COUNTRIES=TODO
+ACCEPTED_CITIES=TODO
 
-REQUIRED CONFIGURATION — fill this section before enabling automatic submission.
+## Compensation — USER MUST COMPLETE
+MIN_MONTHLY_SALARY_INR=TODO
+PREFERRED_MONTHLY_SALARY_INR=TODO
+INTERNATIONAL_SALARY_RULE=TODO
 
-Target locations:
-- TODO
-
-Accept remote roles: TODO
-Accept hybrid roles: TODO
-Accept on-site roles: TODO
-Open to relocation: TODO
-Countries accepted: TODO
-Cities accepted: TODO
-
-Until these fields are completed, the agent may collect and score jobs but must not auto-submit solely on the basis of location fit.
-
-## Salary
-
-REQUIRED CONFIGURATION — fill before automatic submission.
-
-Minimum acceptable salary/month (INR): TODO
-Preferred salary/month (INR): TODO
-International salary rule: TODO
-
-If salary is not disclosed, do not invent a salary. Use the application answer bank or route for review if a salary field is mandatory.
-
-## Work schedule
-
-Preferred shifts: TODO
-Maximum workdays/week: TODO
-Accept night shifts: TODO
-Accept rotational shifts: TODO
+## Schedule / workplace — USER MUST COMPLETE
+PREFERRED_SHIFTS=TODO
+MAX_WORKDAYS_PER_WEEK=TODO
+ACCEPT_NIGHT_SHIFTS=TODO
+ACCEPT_ROTATIONAL_SHIFTS=TODO
 
 ## Application volume
-
-Default maximum applications/day: 10
-Default maximum applications/run: 5
-Do not exceed these without explicit configuration change.
+MAX_APPLICATIONS_PER_RUN=5
+MAX_APPLICATIONS_PER_DAY=10
 
 ## Recruiter outreach
-
-Disabled by default.
-Do not send cold recruiter messages as part of this automation unless explicitly enabled.
+RECRUITER_OUTREACH_ENABLED=NO
