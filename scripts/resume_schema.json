@@ -1,0 +1,166 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TailoredResume",
+  "description": "Structured input for a tailored PDF resume. This JSON is not a resume and must never be attached to an application.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "candidate_name",
+    "headline",
+    "contact",
+    "summary",
+    "skill_groups",
+    "experience",
+    "education",
+    "certifications",
+    "tailoring"
+  ],
+  "properties": {
+    "candidate_name": {
+      "const": "Karina Rohra"
+    },
+    "headline": {
+      "type": "string",
+      "minLength": 10,
+      "maxLength": 160
+    },
+    "contact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["email", "phone", "location", "linkedin"],
+      "properties": {
+        "email": {
+          "const": "karinarohra175@gmail.com"
+        },
+        "phone": {
+          "const": "+91 90813 83567"
+        },
+        "location": {
+          "const": "Vadodara, Gujarat, India"
+        },
+        "linkedin": {
+          "type": "string",
+          "minLength": 10
+        },
+        "availability": {
+          "const": "Immediately"
+        }
+      }
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 40,
+      "maxLength": 1800
+    },
+    "skill_groups": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["category", "items"],
+        "properties": {
+          "category": {
+            "type": "string",
+            "minLength": 2
+          },
+          "items": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "minLength": 2
+            }
+          }
+        }
+      }
+    },
+    "experience": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["title", "organization", "location", "dates", "bullets"],
+        "properties": {
+          "title": { "type": "string" },
+          "organization": { "type": "string" },
+          "location": { "type": "string" },
+          "dates": { "type": "string" },
+          "bullets": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 10,
+            "items": {
+              "type": "string",
+              "minLength": 8,
+              "maxLength": 400
+            }
+          }
+        }
+      }
+    },
+    "education": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["credential", "institution", "dates"],
+        "properties": {
+          "credential": { "type": "string" },
+          "institution": { "type": "string" },
+          "dates": { "type": "string" },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "maxLength": 300
+            }
+          }
+        }
+      }
+    },
+    "certifications": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string" }
+    },
+    "ai_assisted_bullets": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 8,
+        "maxLength": 400
+      }
+    },
+    "portfolio_items": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "tailoring": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["company", "role"],
+      "properties": {
+        "company": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120
+        },
+        "role": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120
+        },
+        "job_url": {
+          "type": "string"
+        },
+        "emphasis": {
+          "type": "string",
+          "maxLength": 400
+        }
+      }
+    }
+  }
+}

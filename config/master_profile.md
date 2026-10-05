@@ -1,8 +1,9 @@
 # MASTER CANDIDATE PROFILE
 
 Status: FINAL / SINGLE SOURCE OF TRUTH
-Source resume filename: Karina_Rohra_Digital_Marketing_Resume(1).pdf
-Rule: This is the ONLY resume that may be used as the factual source for future applications. Do not use, merge, reconcile, or revive older resume versions unless the user explicitly replaces this file and says it is the new final resume.
+Authoritative resume file: reference/Karina_Rohra_Digital_Marketing_Resume_FINAL.pdf
+Source resume filename: Karina_Rohra_Digital_Marketing_Resume_FINAL.pdf
+Rule: This profile and `reference/Karina_Rohra_Digital_Marketing_Resume_FINAL.pdf` are the only factual sources for applications. Do not use, merge, reconcile, or revive older resume versions. A file named `Karina_Rohra_Digital_Marketing_Resume(1).pdf`, or any other earlier resume, is obsolete and must not be used.
 
 ## Identity
 
@@ -114,6 +115,8 @@ Portfolio and samples available on request, including:
 
 Canva | Instagram | LinkedIn | Facebook | MS Excel | PowerPoint | Google Workspace | ChatGPT | Claude | Gemini | AI Content Tools
 
+The final resume text names Canva, PowerPoint, Instagram, LinkedIn, Facebook, Google tools, and AI-assisted content tools. The Claude 101 certification names Claude. Do not add tools beyond this list.
+
 ## Non-negotiable truthfulness rules
 
 1. This profile is authoritative. If a job asks for a fact not supported here, do not invent it.
@@ -121,4 +124,4 @@ Canva | Instagram | LinkedIn | Facebook | MS Excel | PowerPoint | Google Workspa
 3. Do not convert "exposure," "support," or "basic" experience into advanced ownership.
 4. Do not claim paid-media expertise, advanced analytics, advanced SEO, Google Ads, Meta Ads, CRM ownership, or marketing-automation implementation unless separately verified by the user in writing and added to this profile.
 5. Tailoring may change wording, ordering, and emphasis but must remain factually equivalent to this source.
-6. Older resumes found in Drive, GitHub, Cursor history, or previous conversations are obsolete for this workflow.
+6. Older resumes found in Drive, GitHub, Cursor history, zip archives, or previous conversations are obsolete for this workflow. The only authoritative resume file is `reference/Karina_Rohra_Digital_Marketing_Resume_FINAL.pdf`.

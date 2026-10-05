@@ -50,8 +50,12 @@ Reward clear responsibilities, realistic requirements, named employer, consisten
 
 ## Decision
 
-85–100: AUTO-APPLY if all hard stops are clear.
-70–84: REVIEW / optional application.
-Below 70: REJECT.
+The numeric threshold is `AUTO_APPLY_THRESHOLD=85` in `config/runtime.md`.
 
-A score never overrides a hard-stop rule.
+85–100: eligible for LIVE submission only when every application rule and hard stop is clear.
+70–84: prepare and record as review.
+Below 70: reject.
+
+In `RUN_MODE=REVIEW_ONLY`, a score of 85–100 authorizes preparation only. It does not authorize submission.
+
+A score never overrides a hard-stop rule or `RUN_MODE`.

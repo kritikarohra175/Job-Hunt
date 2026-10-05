@@ -6,12 +6,11 @@ Scheduled Automation
 
 ## Repository
 
-Attach this private GitHub repository.
+Attach this private GitHub repository. The automation branch is `main`.
 
 ## Model
 
-Preferred: Claude Sonnet 5.5 (Thinking if available).
-Fallback: Auto.
+Preferred: a current high-capability thinking model.
 Do not use a low-cost model for the end-to-end application run.
 
 ## Computer Use
@@ -21,10 +20,13 @@ Enabled.
 ## MCPs / Plugins
 
 Enable:
+
 - GitHub
 - Google Drive
 - Gmail
-- Google Sheets (or a trusted Google Workspace-capable fallback if Sheets is unavailable)
+- Google Sheets
+
+Google Sheets is the application-history authority. The CSV in git is only a cache.
 
 Use Cursor native Browser / Computer Use. Do not add multiple browser MCPs initially.
 
@@ -33,6 +35,7 @@ Use Cursor native Browser / Computer Use. Do not add multiple browser MCPs initi
 Recommended first schedule: weekdays at 09:00 and 17:00 IST.
 
 Cron:
+
 `0 9,17 * * 1-5`
 
 If Cursor requires an explicit timezone field, use `Asia/Kolkata`.
@@ -41,21 +44,8 @@ If Cursor requires an explicit timezone field, use `Asia/Kolkata`.
 
 Copy the prompt from `prompts/daily_automation_prompt.md` into the automation instructions.
 
-## Before enabling auto-submit
+## Mode
 
-Complete these fields in `config/job_preferences.md`:
-- target locations
-- remote/hybrid/on-site preferences
-- relocation
-- countries/cities
-- minimum salary
-- shift preferences
+Keep `RUN_MODE=REVIEW_ONLY` in `config/runtime.md` for the first runs. That mode must not submit applications.
 
-Complete these fields in `config/answer_bank.md`:
-- availability
-- salary expectation
-- work authorization
-- visa sponsorship
-- relocation
-
-Run in dry/review mode for the first several runs and inspect the tracker before allowing autonomous submission.
+Before changing `RUN_MODE` to `LIVE`, complete the blank fields in `config/job_preferences.md`, `config/answer_bank.md`, and `config/target_config_block.md`, and set `SPREADSHEET_ID`.

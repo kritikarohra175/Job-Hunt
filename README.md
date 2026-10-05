@@ -1,25 +1,34 @@
-# Cursor Job Application Agent
+# Job Hunt
 
-A private Cursor project for finding suitable entry-level digital marketing jobs, tailoring a truthful resume for each job, completing applications where permitted, and tracking every action.
+Control repository for an entry-level digital marketing, social media, content, and SEO job-application workflow.
 
-## Intended use
+The only authoritative resume is `reference/Karina_Rohra_Digital_Marketing_Resume_FINAL.pdf`. Older resume files are not used.
 
-This repository is the instruction/control layer. It is not the job-board login system and it does not contain API keys or OAuth secrets.
+## Runtime
 
-The agent must:
+`config/runtime.md` sets:
 
-1. Find newly posted roles matching the candidate profile.
-2. Deduplicate against prior applications.
-3. Read the full job description before deciding.
-4. Score the job against the rules.
-5. Tailor the resume without inventing facts.
-6. Generate and save a job-specific resume.
-7. Apply only when the site/workflow permits automation and the application is routine.
-8. Stop for CAPTCHAs, 2FA, legal/authorization questions, ambiguous factual questions, suspicious requests, or prohibited automation.
-9. Record the outcome in the application tracker.
+```
+RUN_MODE=REVIEW_ONLY
+MAX_APPLICATIONS_PER_RUN=5
+MAX_APPLICATIONS_PER_DAY=10
+AUTO_APPLY_THRESHOLD=85
+```
 
-## Important
+`REVIEW_ONLY` never submits an application and never clicks a final Submit or Apply button. `LIVE` may submit only when every application rule and hard stop is satisfied.
 
-Keep this GitHub repository private. Do not commit API keys, cookies, browser profiles, passwords, OTPs, session tokens, or other secrets.
+## Tracker
 
-The candidate's source resume should be stored in Google Drive or another private document store and should be linked to from the automation. The current source resume is represented in `config/master_profile.md` so the agent has a structured factual reference.
+Google Sheets is the application-history authority. `data/application_tracker.csv` is a backup cache. Deduplication does not depend on a GitHub commit.
+
+The spreadsheet ID is still `NOT_CONFIGURED`.
+
+## Checks
+
+```
+python3 scripts/validate_config.py
+```
+
+PDF dependencies are listed in `requirements.txt` and installed by `.cursor/environment.json`.
+
+Do not commit passwords, tokens, cookies, API keys, or session files.

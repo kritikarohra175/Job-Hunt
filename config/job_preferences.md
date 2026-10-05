@@ -79,9 +79,12 @@ Accept rotational shifts: TODO
 
 ## Application volume
 
-Default maximum applications/day: 10
-Default maximum applications/run: 5
-Do not exceed these without explicit configuration change.
+The only numeric caps are in `config/runtime.md`:
+
+MAX_APPLICATIONS_PER_RUN=5
+MAX_APPLICATIONS_PER_DAY=10
+
+Do not exceed these without an explicit edit to that file.
 
 ## Recruiter outreach
 

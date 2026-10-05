@@ -8,7 +8,7 @@ Create the strongest truthful one- or two-page ATS-friendly resume for the exact
 
 1. Read the full JD.
 2. Extract responsibilities, must-have skills, nice-to-have skills, tools, channel names, industry terms, seniority signals, and recurring keywords.
-3. Map those requirements to verified candidate evidence in `master_profile.md`.
+3. Map those requirements to verified candidate evidence in `config/master_profile.md` and `reference/Karina_Rohra_Digital_Marketing_Resume_FINAL.pdf`.
 4. Identify unsupported requirements. Never fabricate them.
 5. Rewrite the professional summary to match the role while staying truthful.
 6. Reorder and rename skills only when truthful and ATS-helpful.
@@ -63,6 +63,19 @@ Prefer:
 - consistent dates
 - ATS-readable contact details
 
+## PDF workflow
+
+Tailor only from verified candidate facts. Do not use an older resume as source material.
+
+1. Produce a structured resume that validates against `scripts/resume_schema.json`.
+2. Generate a real PDF with `scripts/build_resume_pdf.py`.
+3. Validate that the PDF opens and that its extracted text contains the candidate name and the tailored summary.
+4. Attach only that PDF. Never attach Markdown, TXT, or JSON as the resume.
+5. Never overwrite `reference/Karina_Rohra_Digital_Marketing_Resume_FINAL.pdf`.
+6. Save the tailored file under `output/resumes/` with a name such as `Karina_Rohra_<Company>_<Role>.pdf`.
+
+The structured JSON is an input to the PDF builder. It is not a resume and must not be uploaded.
+
 ## Final validation
 
 Before submission, confirm:
@@ -73,3 +86,5 @@ Before submission, confirm:
 - No role inflation.
 - JD keywords are represented where legitimately supported.
 - The resume is concise and targeted.
+- The attached file is a validated PDF.
+- The master resume file is unchanged.

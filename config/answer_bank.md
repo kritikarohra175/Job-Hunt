@@ -24,7 +24,8 @@ Draft from verified profile only: The candidate enjoys developing social content
 
 ## Availability
 
-NOT CONFIGURED. Do not guess.
+Approved answer, taken from the final resume: Immediately.
+Do not substitute a different availability.
 
 ## Salary expectation
 

@@ -1,74 +1,50 @@
 # START HERE
 
-## 1. Create a private GitHub repository
+The repository layout is already in place. Do not recreate it from an older zip or from loose root files.
 
-Recommended name:
-`cursor-job-application-agent`
+## Authoritative resume
 
-Keep it private.
+`reference/Karina_Rohra_Digital_Marketing_Resume_FINAL.pdf`
 
-## 2. Copy this folder into the repo
+Do not replace it with an older resume.
 
-The repository should contain:
-- `AGENTS.md`
-- `.cursor/rules/job-application-agent.mdc`
-- `config/`
-- `data/`
-- `templates/`
-- `prompts/`
+## Mode
 
-## 3. Connect Cursor integrations
+`config/runtime.md` is set to `RUN_MODE=REVIEW_ONLY`. Leave it there until a review-only run has been checked. Do not submit applications in that mode.
 
-Already connected:
-- GitHub
+## Still required before LIVE submission
 
-Connect in Cursor Customize:
-- Google Drive
-- Gmail
-- Google Sheets (or a trusted Google Workspace-capable alternative if Sheets is unavailable)
+In `config/job_preferences.md` and `config/target_config_block.md`, the user still needs to set:
 
-Use Cursor's native Browser / Computer Use.
+- target locations
+- remote, hybrid, and on-site preferences
+- relocation
+- countries and cities
+- minimum and preferred salary
+- international salary rule
+- shift preferences
 
-## 4. Put the source resume in Google Drive
+In `config/answer_bank.md`, the user still needs exact answers for:
 
-Create:
-`Job Applications/Master Resume/`
+- salary expectation
+- work authorization
+- visa sponsorship
+- relocation
 
-Upload the final source resume there.
+Availability is already taken from the final resume: Immediately.
 
-## 5. Complete configuration
+## Tracker
 
-Edit `config/job_preferences.md` and replace every `TODO` with an explicit value.
+Create or connect a Google Sheet named `Job Applications — Master Tracker`, with a tab named `Applications`, and put its ID in `SPREADSHEET_ID` in `config/runtime.md`.
 
-Edit `config/answer_bank.md` and replace the required `NOT CONFIGURED` fields with exact approved answers.
+Until that ID is set, deduplication is incomplete and the workflow must not submit.
 
-Do not let the agent guess these fields.
+Import `data/application_tracker.csv` only as the header cache. The Sheet remains the authority.
 
-## 6. Create the tracker
-
-Import `data/application_tracker.csv` into a Google Sheet named:
-`Job Applications — Master Tracker`
-
-## 7. Create the Cursor Automation
+## Automation
 
 Use `AUTOMATION_CREATE_TAB.md`.
-
-Recommended schedule:
-`0 9,17 * * 1-5`
-Timezone: `Asia/Kolkata`
-Model: `Claude Sonnet 5.5` (Thinking if available), fallback `Auto`.
-
 Paste `prompts/daily_automation_prompt.md` as the automation instructions.
+Attach this repository on `main`.
 
-Attach this repository.
-
-## 8. First phase: review mode
-
-Run the first several scheduled runs without autonomous submission. Verify:
-- correct job filtering
-- correct duplicate detection
-- correct resume tailoring
-- correct application answers
-- correct tracker updates
-
-Then enable autonomous submission only for the explicit, permitted routine flows defined by the rules.
+Run `python3 scripts/validate_config.py` before the first automation test.
