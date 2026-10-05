@@ -26,31 +26,30 @@ Draft from verified profile only: The candidate enjoys developing social content
 
 Personalize only from facts in the job description or on the company site. Never invent company knowledge.
 
-## Availability
+APPROVED APPLICATION ANSWERS
 
-APPROVED ANSWER: Immediately.
-This is stated on the final resume. Do not substitute a different availability.
+AVAILABILITY
+Immediately.
 
-## Salary expectation
+SALARY EXPECTATION — INDIA
+I’m open to discussing compensation based on the role, responsibilities, location, and prevailing market range. For India-based opportunities, I’m targeting roles starting around ₹20,000 per month, with flexibility for the right opportunity.
 
-NOT CONFIGURED. Do not guess.
-Salary expectation: TODO
+SALARY EXPECTATION — INTERNATIONAL
+I’m open to discussing compensation based on the role, location, responsibilities, and prevailing market range for the position. I’m flexible for the right opportunity and would be happy to discuss the employer’s budgeted range.
 
-## Work authorization
+RELOCATION
+Yes, I’m open to relocating for the right opportunity, including international relocation. I’m particularly interested in opportunities where relocation support or employer-sponsored work authorization is available when required.
 
-NOT CONFIGURED. Stop unless the user provides an exact approved answer.
-Work authorization: TODO
+WORK AUTHORIZATION — INDIA
+Yes, I am authorized to work in India.
 
-## Visa sponsorship
+WORK AUTHORIZATION — INTERNATIONAL
+I do not currently hold international work authorization. I am open to relocation and would require employer-sponsored work authorization where sponsorship is required.
 
-NOT CONFIGURED. Stop unless the user provides an exact approved answer.
-Visa sponsorship: TODO
+VISA SPONSORSHIP
+I would require employer sponsorship in countries where employer-sponsored work authorization is required.
 
-## Relocation
-
-NOT CONFIGURED. Do not guess.
-Relocation: TODO
-
-## Sensitive questions
-
-Never infer answers from demographic information or from the resume. Stop and mark `Blocked - Review`.
+IMPORTANT:
+- Never state that the candidate already has international work authorization.
+- Never claim an existing visa, residence permit, work permit, or sponsorship.
+- If an application asks a country-specific immigration question that cannot be answered exactly from the approved statements above, stop for review.
