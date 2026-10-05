@@ -47,8 +47,12 @@ TRACKER_TAB=Applications
 
 Google Sheets is the authoritative application-history tracker.
 `data/application_tracker.csv` is a backup cache only. It may be stale.
-Deduplication must read the Google Sheet when `SPREADSHEET_ID` is configured.
+Deduplication must check both the Google Sheet and `data/application_tracker.csv`.
+The Sheet is authoritative when `SPREADSHEET_ID` is configured and the Sheet can be read.
+A match in either source is a duplicate.
 A GitHub commit of the CSV is not proof that a job was applied to, and it is not proof that a job is new.
-If the Sheet cannot be read, mark deduplication incomplete and do not submit.
+If the Sheet cannot be read, still check the local CSV, mark deduplication incomplete, and do not submit.
 
 `SPREADSHEET_ID` is not configured. Do not invent one.
+Paste the real Google Sheet ID on the `SPREADSHEET_ID=` line above, replacing `NOT_CONFIGURED`.
+That line in this file is the field the automation reads. Mirror the same value in `config/target_config_block.md`.

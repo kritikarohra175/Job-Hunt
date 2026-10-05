@@ -15,13 +15,15 @@ MAX_APPLICATIONS_PER_DAY=10
 AUTO_APPLY_THRESHOLD=85
 ```
 
-`REVIEW_ONLY` never submits an application and never clicks a final Submit or Apply button. Run two review-only tests before changing the mode. `LIVE` may submit only when every application rule and hard stop is satisfied and the missing user fields are filled.
+`REVIEW_ONLY` never submits an application and never clicks a final Submit or Apply button. Run two review-only tests before changing the mode. `LIVE` may submit only when every application rule and hard stop is satisfied and `SPREADSHEET_ID` is the real Google Sheet ID.
 
 ## Tracker
 
 Google Sheets is the application-history authority. `data/application_tracker.csv` is a backup cache. Deduplication does not depend on a GitHub commit.
 
-The spreadsheet ID is still `NOT_CONFIGURED`.
+Approved search preferences and application answers are in `config/job_preferences.md` and `config/answer_bank.md`.
+
+The spreadsheet ID is still `NOT_CONFIGURED`. Paste the real Google Sheet ID in `config/runtime.md` on `SPREADSHEET_ID=`, replacing `NOT_CONFIGURED`. Deduplication checks that Sheet and `data/application_tracker.csv`.
 
 ## Checks
 

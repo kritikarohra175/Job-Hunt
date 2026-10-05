@@ -64,6 +64,8 @@ Search for newly posted, legitimate, entry-level roles in the families defined b
 
 Prioritize postings from the last 24–48 hours, or since the previous successful run, with a small overlap so recent posts are not missed. Prefer direct employer career pages and standard ATS pages. Use job boards for discovery and verification.
 
+Attempt the multiple sources listed under Job sources in `config/job_preferences.md` during the same run. Search LinkedIn, Naukri, Indeed, Google Jobs, employer career pages, public ATS pages, Glassdoor, and the location-specific boards named there. Internshala is a supplemental India source only. Do not rely primarily on Internshala, and do not stop discovery after one board. If a source blocks automation or disallows it under `config/site_policy.md`, record the reason and continue with the remaining sources.
+
 For every discovered listing, capture:
 
 - company
@@ -86,19 +88,23 @@ Google Sheets is the authoritative application history. The spreadsheet name is 
 
 `data/application_tracker.csv` is a backup cache only. A GitHub commit of that CSV is not sufficient deduplication.
 
-Treat a listing as a duplicate when any of these match an existing tracker row:
+Check both the Google Sheet and the local CSV before treating a job as new. A match in either source is a duplicate. The Sheet remains authoritative when it can be read. The CSV check does not replace the Sheet.
+
+Treat a listing as a duplicate when any of these match an existing tracker row in either source:
 
 - same canonical URL
 - same company + normalized title + substantially the same job description
 - same external ATS posting copied across boards
 
-If `SPREADSHEET_ID=NOT_CONFIGURED`, or the Sheet cannot be read, mark deduplication incomplete. Continue discovery and scoring only. Do not submit.
+If `SPREADSHEET_ID=NOT_CONFIGURED`, or the Sheet cannot be read, still check `data/application_tracker.csv`, then mark deduplication incomplete. Continue discovery and scoring only. Do not submit.
 
 ## 4. Filter
 
 Apply `config/application_rules.md`, `config/job_preferences.md`, and `config/red_flags.md`.
 
 Reject roles that fail mandatory requirements. Do not stretch a weak role into a fit to increase volume.
+
+Apply the approved location, work-arrangement, salary, schedule, and work-authorization rules in `config/job_preferences.md`. Use the exact answers in `config/answer_bank.md` when a covered question asks for relocation, salary expectation, India or international work authorization, or visa sponsorship. Never claim existing international work authorization, a visa, or a permit.
 
 If location, salary, or shift fields are still `TODO`, do not invent a fit for those fields. Route the affected job to review.
 

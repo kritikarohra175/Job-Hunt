@@ -47,4 +47,4 @@ Copy the prompt from `prompts/daily_automation_prompt.md` into the automation in
 
 Keep `RUN_MODE=REVIEW_ONLY` in `config/runtime.md` for the first runs. That mode must not submit applications.
 
-Before changing `RUN_MODE` to `LIVE`, complete the blank fields in `config/job_preferences.md`, `config/answer_bank.md`, and `config/target_config_block.md`, and set `SPREADSHEET_ID`.
+Before changing `RUN_MODE` to `LIVE`, set `SPREADSHEET_ID` in `config/runtime.md` to the real Google Sheet ID. Do not invent it. Approved preference and answer fields are already filled.

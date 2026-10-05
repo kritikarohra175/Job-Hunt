@@ -34,7 +34,8 @@ Compare only against verified profile skills. Penalize requirements for tools/sk
 Use `config/job_preferences.md`. If not configured, mark this component `UNRESOLVED` and route to review instead of inventing fit.
 
 ### Salary fit (10)
-Use configured salary floor and the JD's stated range. Never invent a salary.
+Use the salary floor and filtering rules in `config/job_preferences.md` and the JD's stated range. Never invent or estimate a salary.
+An entire stated India monthly INR range below ₹20,000 is a reject. A stated range that overlaps ₹20,000/month is review. A stated monthly INR salary that starts at or above ₹20,000/month can receive salary-fit credit when every other requirement passes. Undisclosed salary is not an automatic rejection and is not a reason to invent a number.
 
 ### Company/industry fit (5)
 Reward legitimate employers, relevant industries, and clear role ownership. Penalize suspicious or irrelevant listings.

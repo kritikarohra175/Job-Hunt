@@ -3,7 +3,7 @@
 Run date: YYYY-MM-DD
 Run window: Morning / Evening
 RUN_MODE: REVIEW_ONLY
-Deduplication source: Google Sheets / incomplete
+Deduplication source: Google Sheets and data/application_tracker.csv / incomplete
 Google Sheets updated: yes / no
 Authoritative resume: reference/Karina_Rohra_Digital_Marketing_Resume_FINAL.pdf
 

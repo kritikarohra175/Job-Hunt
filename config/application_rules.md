@@ -54,13 +54,15 @@ Below 70: reject.
 
 Google Sheets is the authoritative application history. `data/application_tracker.csv` is a backup cache only.
 
+Deduplication must check both the Google Sheet and the local CSV. A listing that matches either source is a duplicate. The Sheet remains authoritative when it can be read. The CSV check does not replace the Sheet.
+
 Treat these as duplicates when they resolve to the same opportunity:
 
 - Same canonical job URL.
 - Same company + normalized title + substantially same job description.
 - Same external ATS posting duplicated across boards.
 
-Read the Google Sheet before deciding that a job is new. A GitHub commit of the CSV is not sufficient deduplication. If the Sheet cannot be read, mark deduplication incomplete and do not submit.
+Read the Google Sheet and `data/application_tracker.csv` before deciding that a job is new. A GitHub commit of the CSV is not sufficient deduplication. If the Sheet cannot be read, still check the local CSV, mark deduplication incomplete, and do not submit.
 
 Never submit the same job twice.
 

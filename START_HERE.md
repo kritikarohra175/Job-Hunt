@@ -12,34 +12,21 @@ Do not replace it with an older resume.
 
 ## Mode
 
-`config/runtime.md` is set to `RUN_MODE=REVIEW_ONLY`. Leave it there for the next two review-only tests. Do not submit applications in that mode. Change it to `LIVE` only after those tests and the missing user fields are done.
+`config/runtime.md` is set to `RUN_MODE=REVIEW_ONLY`. Leave it there for the next two review-only tests. Do not submit applications in that mode. Change it to `LIVE` only after those tests and `SPREADSHEET_ID` is set to the real Google Sheet ID.
 
-## Still required before LIVE submission
+## Approved preferences
 
-In `config/job_preferences.md` and `config/target_config_block.md`, the user still needs to set:
+`config/job_preferences.md`, `config/answer_bank.md`, and `config/target_config_block.md` now contain the approved locations, work arrangements, relocation, salary rules, shifts, availability, work authorization, visa sponsorship, and salary answers.
 
-- target locations
-- remote, hybrid, and on-site preferences
-- relocation
-- countries and cities
-- minimum and preferred salary
-- international salary rule
-- shift preferences
-
-In `config/answer_bank.md`, the user still needs exact answers for:
-
-- salary expectation
-- work authorization
-- visa sponsorship
-- relocation
-
-Availability is already taken from the final resume: Immediately.
+Availability remains Immediately.
 
 ## Tracker
 
-Create or connect a Google Sheet named `Job Applications — Master Tracker`, with a tab named `Applications`, and put its ID in `SPREADSHEET_ID` in `config/runtime.md`.
+Create or connect a Google Sheet named `Job Applications — Master Tracker`, with a tab named `Applications`.
 
-Until that ID is set, deduplication is incomplete and the workflow must not submit.
+Paste its ID in `config/runtime.md` on the line `SPREADSHEET_ID=NOT_CONFIGURED`, replacing `NOT_CONFIGURED`. Mirror that value on `SPREADSHEET_ID=` in `config/target_config_block.md`. Do not invent an ID.
+
+Until that ID is set, deduplication against Google Sheets is incomplete and the workflow must not submit. Still check `data/application_tracker.csv`. A match in either source is a duplicate.
 
 Import `data/application_tracker.csv` only as the header cache. The Sheet remains the authority.
 

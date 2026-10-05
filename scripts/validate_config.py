@@ -157,6 +157,59 @@ def main() -> int:
         "master profile does not treat the older resume as the source",
     )
     check("Google Sheets" in rules and "backup cache" in rules.lower(), "deduplication does not rely only on git")
+    check(
+        "data/application_tracker.csv" in rules and "either source" in rules,
+        "deduplication checks Google Sheets and the local CSV",
+    )
+    check("TARGET_LOCATIONS=Vadodara" in preferences, "approved target locations are configured")
+    check("ACCEPT_REMOTE=YES" in preferences, "remote work is accepted")
+    check("ACCEPT_HYBRID=YES" in preferences, "hybrid work is accepted")
+    check("ACCEPT_ONSITE=YES" in preferences, "on-site work is accepted")
+    check("OPEN_TO_RELOCATION=YES" in preferences, "relocation is accepted")
+    check("OPEN_TO_INTERNATIONAL_RELOCATION=YES" in preferences, "international relocation is accepted")
+    check("MIN_MONTHLY_SALARY_INR=20000" in preferences, "India monthly salary floor is 20000")
+    check("PREFERRED_SHIFTS=Day" in preferences, "preferred shift is day")
+    check("MAX_WORKDAYS_PER_WEEK=5" in preferences, "maximum workdays per week is 5")
+    check(
+        "ACCEPT_NIGHT_SHIFTS=YES_ONLY_IF_FULLY_REMOTE" in preferences,
+        "night shifts are limited to fully remote roles",
+    )
+    check(
+        "ACCEPT_ROTATIONAL_SHIFTS=YES_ONLY_IF_FULLY_REMOTE" in preferences,
+        "rotational shifts are limited to fully remote roles",
+    )
+    check("Do not rely primarily on Internshala." in preferences, "Internshala is not the primary source")
+    check(
+        all(source in preferences for source in ("LinkedIn Jobs", "Naukri", "Indeed", "Glassdoor")),
+        "job search lists multiple sources",
+    )
+    check(
+        "Do not rely primarily on Internshala" in prompt and "LinkedIn" in prompt and "Naukri" in prompt,
+        "daily prompt attempts multiple sources",
+    )
+    check(
+        "data/application_tracker.csv" in prompt and "either source" in prompt,
+        "daily prompt deduplicates against the Sheet and the local CSV",
+    )
+    spreadsheet_id = setting(runtime, "SPREADSHEET_ID")
+    check(
+        spreadsheet_id in {None, "NOT_CONFIGURED"} or bool(re.fullmatch(r"[A-Za-z0-9_-]{20,}", spreadsheet_id or "")),
+        "SPREADSHEET_ID is present and is not an invented placeholder",
+    )
+
+    answers = read("config/answer_bank.md") if (REPO_ROOT / "config/answer_bank.md").is_file() else ""
+    approved_answers = (
+        "Yes, I am authorized to work in India.",
+        "I do not currently hold international work authorization. I am open to relocation and would require employer-sponsored work authorization where sponsorship is required.",
+        "I would require employer sponsorship in countries where employer-sponsored work authorization is required.",
+        "Yes, I’m open to relocating for the right opportunity, including international relocation. I’m particularly interested in opportunities where relocation support or employer-sponsored work authorization is available when required.",
+        "I’m open to discussing compensation based on the role, responsibilities, location, and prevailing market range. For India-based opportunities, I’m targeting roles starting around ₹20,000 per month, with flexibility for the right opportunity.",
+        "I’m open to discussing compensation based on the role, location, responsibilities, and prevailing market range for the position. I’m flexible for the right opportunity and would be happy to discuss the employer’s budgeted range.",
+    )
+    for answer in approved_answers:
+        check(answer in answers, "answer bank contains an approved response")
+    check("NOT CONFIGURED" not in answers and "TODO" not in answers, "answer bank has no unconfigured answers")
+    check("=TODO" not in preferences, "job preferences have no TODO values")
 
     folded_prompt = prompt.casefold()
     cursor = 0
