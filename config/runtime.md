@@ -42,13 +42,20 @@ Do not use, merge, revive, or reference any older resume, including a file named
 TRACKER_AUTHORITY=google_sheets
 TRACKER_CACHE=data/application_tracker.csv
 SPREADSHEET_NAME=Job Applications — Master Tracker
-SPREADSHEET_ID=NOT_CONFIGURED
+SPREADSHEET_ID=1M-cW2cUDfcUAQTGU5T9pNMs_rW_pXZhvhq-kjasD6JI
 TRACKER_TAB=Applications
+DRIVE_MASTER_RESUME_FILE_ID=1xjtepznMiLTdQnWGMIujIlWww15PY5UX
+DRIVE_MASTER_RESUME_FOLDER_ID=1cfBsRht8TOJ7e5PsBcIRlnoQrUdUaOG8
+DRIVE_TAILORED_RESUMES_FOLDER_ID=1uoZnYXfHaCa8jRC9aEQ3BLq3NFFwq_Fo
 
 Google Sheets is the authoritative application-history tracker.
 `data/application_tracker.csv` is a backup cache only. It may be stale.
-Deduplication must read the Google Sheet when `SPREADSHEET_ID` is configured.
+Deduplication must check both the Google Sheet and `data/application_tracker.csv`.
+The Sheet is authoritative when it can be read.
+A match in either source is a duplicate.
 A GitHub commit of the CSV is not proof that a job was applied to, and it is not proof that a job is new.
-If the Sheet cannot be read, mark deduplication incomplete and do not submit.
+If the Sheet cannot be read, still check the local CSV, mark deduplication incomplete, and do not submit.
 
-`SPREADSHEET_ID` is not configured. Do not invent one.
+The spreadsheet ID above was read from the connected Google account. The sheet title is `Job Applications — Master Tracker` and the tab is `Applications`. Do not replace it with a guessed ID.
+
+`DRIVE_MASTER_RESUME_FILE_ID` is a Drive copy of `reference/Karina_Rohra_Digital_Marketing_Resume_FINAL.pdf`. The bytes match that repository file. Do not open any other resume PDF on Drive. Store new tailored PDFs in the Tailored Resumes folder. Never overwrite the master resume.

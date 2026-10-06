@@ -130,7 +130,16 @@ def main() -> int:
         setting(runtime, "TRACKER_CACHE") == "data/application_tracker.csv",
         "GitHub CSV is marked as the backup cache",
     )
-    check(setting(runtime, "SPREADSHEET_ID") is not None, "SPREADSHEET_ID is present")
+    sheet_id = setting(runtime, "SPREADSHEET_ID")
+    drive_resume_id = setting(runtime, "DRIVE_MASTER_RESUME_FILE_ID")
+    check(
+        bool(sheet_id) and sheet_id not in {"NOT_CONFIGURED", "TODO"} and " " not in sheet_id,
+        "SPREADSHEET_ID is a real spreadsheet id",
+    )
+    check(
+        bool(drive_resume_id) and drive_resume_id not in {"NOT_CONFIGURED", "TODO"},
+        "Drive master resume file id is configured",
+    )
 
     rules = read("config/application_rules.md") if (REPO_ROOT / "config/application_rules.md").is_file() else ""
     scoring = read("config/job_scoring.md") if (REPO_ROOT / "config/job_scoring.md").is_file() else ""
@@ -157,6 +166,23 @@ def main() -> int:
         "master profile does not treat the older resume as the source",
     )
     check("Google Sheets" in rules and "backup cache" in rules.lower(), "deduplication does not rely only on git")
+    check(
+        "both the Google Sheet and the CSV" in rules,
+        "application rules deduplicate against both the Sheet and the CSV",
+    )
+    check("below ₹20,000/month" in preferences, "India salary floor reject rule is present")
+    check("overlapping ₹20,000/month" in preferences, "overlapping salary review rule is present")
+    check("supplemental" in preferences.casefold() and "LinkedIn" in preferences, "job search uses multiple sources")
+    check("Vadodara" in preferences and "Dubai" in preferences and "Toronto" in preferences, "approved locations are present")
+    check(".venv/bin/python" in prompt, "daily prompt uses the project virtualenv")
+    check("both the Google Sheet and the local CSV" in prompt, "daily prompt deduplicates against both trackers")
+    mcp = read("config/mcp_setup.md") if (REPO_ROOT / "config/mcp_setup.md").is_file() else ""
+    target = read("config/target_config_block.md") if (REPO_ROOT / "config/target_config_block.md").is_file() else ""
+    check(bool(sheet_id) and sheet_id in mcp and f"SPREADSHEET_ID={sheet_id}" in target, "spreadsheet id matches across tracker files")
+    check(
+        bool(drive_resume_id) and drive_resume_id in mcp and drive_resume_id in target,
+        "Drive master resume id matches across tracker files",
+    )
 
     folded_prompt = prompt.casefold()
     cursor = 0

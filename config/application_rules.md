@@ -47,6 +47,9 @@ Below 70: reject.
 - Roles primarily unrelated to digital marketing.
 - Senior or manager roles.
 - Clearly more than 2 years of required experience.
+- An India role whose stated monthly INR salary range is entirely below ₹20,000/month.
+- A night shift or rotational shift that is not fully remote.
+- A schedule that requires more than 5 workdays per week.
 - Suspicious or unverifiable employers where risk is material.
 - Applications asking the candidate to create fraudulent documents or misrepresent experience.
 
@@ -54,13 +57,15 @@ Below 70: reject.
 
 Google Sheets is the authoritative application history. `data/application_tracker.csv` is a backup cache only.
 
-Treat these as duplicates when they resolve to the same opportunity:
+Check both the Google Sheet and the CSV before treating a job as new. A match in either source is a duplicate. The Sheet remains authoritative when it can be read. The CSV check does not replace the Sheet.
+
+Treat these as duplicates when they resolve to the same opportunity in either source:
 
 - Same canonical job URL.
 - Same company + normalized title + substantially same job description.
 - Same external ATS posting duplicated across boards.
 
-Read the Google Sheet before deciding that a job is new. A GitHub commit of the CSV is not sufficient deduplication. If the Sheet cannot be read, mark deduplication incomplete and do not submit.
+A GitHub commit of the CSV is not sufficient deduplication. If the Sheet cannot be read, still check the CSV, mark deduplication incomplete, and do not submit.
 
 Never submit the same job twice.
 

@@ -15,18 +15,18 @@ MAX_APPLICATIONS_PER_DAY=10
 AUTO_APPLY_THRESHOLD=85
 ```
 
-`REVIEW_ONLY` never submits an application and never clicks a final Submit or Apply button. Run two review-only tests before changing the mode. `LIVE` may submit only when every application rule and hard stop is satisfied and the missing user fields are filled.
+`REVIEW_ONLY` never submits an application and never clicks a final Submit or Apply button. `LIVE` may submit only when every application rule and hard stop is satisfied.
 
 ## Tracker
 
-Google Sheets is the application-history authority. `data/application_tracker.csv` is a backup cache. Deduplication does not depend on a GitHub commit.
+Google Sheets is the application-history authority. `data/application_tracker.csv` is a backup cache. Deduplication checks both, and a GitHub commit of the CSV is not enough.
 
-The spreadsheet ID is still `NOT_CONFIGURED`.
+The spreadsheet ID, tab, and Drive resume file ID are in `config/runtime.md`.
 
 ## Checks
 
 ```
-python3 scripts/validate_config.py
+.venv/bin/python scripts/validate_config.py
 ```
 
 PDF dependencies are listed in `requirements.txt` and installed by `.cursor/environment.json`.
