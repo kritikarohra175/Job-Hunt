@@ -2,7 +2,7 @@
 
 The canonical files are under `config/`, `prompts/`, `scripts/`, `data/`, `reference/`, and `.cursor/`. Do not create a second copy of those files at the repository root.
 
-`config/runtime.md` is `RUN_MODE=REVIEW_ONLY`. That mode never submits an application.
+`config/runtime.md` is `RUN_MODE=LIVE` with `MAX_APPLICATIONS_PER_RUN=1`. `LIVE` may submit only when every application rule and hard stop is satisfied.
 
 Approved locations, salary rules, schedule, work authorization, and answers are in:
 

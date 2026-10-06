@@ -29,7 +29,7 @@ In `REVIEW_ONLY`, never submit an application and never click a final Submit or 
 
 Defaults in `config/runtime.md`:
 
-MAX_APPLICATIONS_PER_RUN=5
+MAX_APPLICATIONS_PER_RUN=1
 MAX_APPLICATIONS_PER_DAY=10
 AUTO_APPLY_THRESHOLD=85
 

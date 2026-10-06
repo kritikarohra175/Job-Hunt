@@ -2,8 +2,8 @@
 
 These values are the only runtime defaults. Do not change them during a run.
 
-RUN_MODE=REVIEW_ONLY
-MAX_APPLICATIONS_PER_RUN=5
+RUN_MODE=LIVE
+MAX_APPLICATIONS_PER_RUN=1
 MAX_APPLICATIONS_PER_DAY=10
 AUTO_APPLY_THRESHOLD=85
 

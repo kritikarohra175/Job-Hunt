@@ -1,7 +1,7 @@
 # REQUIRED USER CONFIGURATION
 
 Approved values are recorded here and in the canonical files they mirror.
-Do not set `RUN_MODE` in this file. The only mode switch is `config/runtime.md`, which is `RUN_MODE=REVIEW_ONLY`.
+Do not set `RUN_MODE` in this file. The only mode switch is `config/runtime.md`, which is `RUN_MODE=LIVE`.
 
 ## Locations
 

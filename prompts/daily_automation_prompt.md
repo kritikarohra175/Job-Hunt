@@ -51,7 +51,7 @@ Stop the run if validation fails.
 Confirm:
 
 - `RUN_MODE=REVIEW_ONLY` unless the user has explicitly edited `config/runtime.md` to `LIVE`
-- `MAX_APPLICATIONS_PER_RUN=5`
+- `MAX_APPLICATIONS_PER_RUN=1`
 - `MAX_APPLICATIONS_PER_DAY=10`
 - `AUTO_APPLY_THRESHOLD=85`
 - The only authoritative resume is `reference/Karina_Rohra_Digital_Marketing_Resume_FINAL.pdf`
