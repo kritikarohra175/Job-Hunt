@@ -28,10 +28,13 @@ The authoritative resume file inside this repository is `reference/Karina_Rohra_
 Do not replace it with an older resume from Drive.
 Do not overwrite that file from an automation run.
 
-Drive folders:
+Drive folders and the only usable Drive resume:
 
-- `Job Applications/Master Resume/` may hold a private copy of the same final PDF. If Drive and this repository disagree, stop and ask. Do not merge resume versions.
-- `Job Applications/Tailored Resumes/` is the archive for generated application PDFs.
+- Master Resume folder: `1cfBsRht8TOJ7e5PsBcIRlnoQrUdUaOG8`
+- Tailored Resumes folder: `1uoZnYXfHaCa8jRC9aEQ3BLq3NFFwq_Fo`
+- DRIVE_MASTER_RESUME_FILE_ID=1xjtepznMiLTdQnWGMIujIlWww15PY5UX
+
+That Drive file is named `Karina_Rohra_Digital_Marketing_Resume_FINAL.pdf` and is a byte-identical copy of `reference/Karina_Rohra_Digital_Marketing_Resume_FINAL.pdf`. If Drive and this repository disagree, stop. Do not merge resume versions. Do not open any other resume PDF on Drive, including older files whose names contain "final".
 
 ### 3. Gmail
 
@@ -50,7 +53,9 @@ Google Sheets is the authoritative application-history tracker.
 
 Spreadsheet name: `Job Applications — Master Tracker`
 Tab: `Applications`
-Spreadsheet ID: `NOT_CONFIGURED` in `config/runtime.md`
+SPREADSHEET_ID=1M-cW2cUDfcUAQTGU5T9pNMs_rW_pXZhvhq-kjasD6JI
+
+The ID is also recorded in `config/runtime.md`. It was read from the connected Google account. Do not invent a different ID.
 
 Use the official Google Sheets plugin. Do not hard-code credentials.
 Append or update one row per opportunity.

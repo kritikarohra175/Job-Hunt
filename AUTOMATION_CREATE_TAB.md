@@ -1,50 +1,19 @@
-# Cursor Automation — Exact Setup
+# Cursor Automation
 
-## Automation type
+One automation is already connected to this repository: Job Hunt (`bee28e3c-c04e-11f1-bb68-864e54d14197`).
 
-Scheduled Automation
+Use repository `kritikarohra175/Job-Hunt` and branch `main`. Do not point the recurring run at a `cursor/...` feature branch.
 
-## Repository
+The instructions must be the current contents of `prompts/daily_automation_prompt.md`.
 
-Attach this private GitHub repository. The automation branch is `main`.
+Keep `config/runtime.md` at `RUN_MODE=REVIEW_ONLY` for review tests. That mode never submits an application.
 
-## Model
+Schedule, when the automation is turned on: weekdays at 09:00 and 17:00 `Asia/Kolkata`.
 
-Use Claude Sonnet 4.6 for the current known-good test, or Auto if Cursor should choose the model. Do not switch models while debugging the workflow unless necessary.
+```
+0 9,17 * * 1-5
+```
 
-## Computer Use
+Connect GitHub, Google Drive, Google Sheets, and Gmail. Use Cursor's browser tools. Do not add a second browser connector.
 
-Enabled.
-
-## MCPs / Plugins
-
-Enable:
-
-- GitHub
-- Google Drive
-- Gmail
-- Google Sheets
-
-Google Sheets is the application-history authority. The CSV in git is only a cache.
-
-Use Cursor native Browser / Computer Use. Do not add multiple browser MCPs initially.
-
-## Schedule
-
-Recommended first schedule: weekdays at 09:00 and 17:00 IST.
-
-Cron:
-
-`0 9,17 * * 1-5`
-
-If Cursor requires an explicit timezone field, use `Asia/Kolkata`.
-
-## Automation prompt
-
-Copy the prompt from `prompts/daily_automation_prompt.md` into the automation instructions.
-
-## Mode
-
-Keep `RUN_MODE=REVIEW_ONLY` in `config/runtime.md` for the first runs. That mode must not submit applications.
-
-Before changing `RUN_MODE` to `LIVE`, complete the blank fields in `config/job_preferences.md`, `config/answer_bank.md`, and `config/target_config_block.md`, and set `SPREADSHEET_ID`.
+Google Sheets is the application-history authority. `data/application_tracker.csv` is only a cache.

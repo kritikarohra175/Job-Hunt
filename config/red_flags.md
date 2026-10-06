@@ -10,8 +10,7 @@ Stop the application and mark it `Blocked - Review` when any of the following ap
 - Payments, fees, or a required purchase
 - Passwords, credentials, OTPs, or other secrets
 - Legal declarations, contracts, or non-compete terms
-- Work authorization
-- Visa sponsorship
+- Work authorization or visa sponsorship, unless the question is fully answered by the exact statement in `config/answer_bank.md`. Do not turn that statement into a claim of an existing visa, permit, or residence status. Stop on any country-specific immigration question the answer bank does not answer exactly.
 - Medical or disability questions
 - Demographic or equal-opportunity questions
 - Criminal-history questions
