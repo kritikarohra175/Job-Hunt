@@ -117,7 +117,7 @@ def main() -> int:
     check(mode in {"REVIEW_ONLY", "LIVE"}, f"RUN_MODE is REVIEW_ONLY or LIVE (found {mode})")
     if mode == "REVIEW_ONLY":
         print("PASS  current RUN_MODE=REVIEW_ONLY")
-    check(setting(runtime, "MAX_APPLICATIONS_PER_RUN") == "5", "MAX_APPLICATIONS_PER_RUN=5")
+    check(setting(runtime, "MAX_APPLICATIONS_PER_RUN") == "1", "MAX_APPLICATIONS_PER_RUN=1")
     check(setting(runtime, "MAX_APPLICATIONS_PER_DAY") == "10", "MAX_APPLICATIONS_PER_DAY=10")
     check(setting(runtime, "AUTO_APPLY_THRESHOLD") == "85", "AUTO_APPLY_THRESHOLD=85")
     check(
@@ -155,7 +155,7 @@ def main() -> int:
     check("Never submit an application." in rules, "application rules forbid submission in review mode")
     check("Never click a final Submit" in rules, "application rules forbid the final submit control")
     check("AUTO_APPLY_THRESHOLD=85" in rules and "AUTO_APPLY_THRESHOLD=85" in scoring, "threshold 85 is consistent")
-    check("MAX_APPLICATIONS_PER_RUN=5" in preferences, "per-run cap is consistent")
+    check("MAX_APPLICATIONS_PER_RUN=1" in preferences, "per-run cap is consistent")
     check("MAX_APPLICATIONS_PER_DAY=10" in preferences, "per-day cap is consistent")
     check(
         "Source resume filename: Karina_Rohra_Digital_Marketing_Resume_FINAL.pdf" in profile,

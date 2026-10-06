@@ -26,7 +26,7 @@ During `REVIEW_ONLY`:
 8. No CAPTCHA, MFA/2FA, identity check, payment, or anti-bot barrier must be bypassed.
 9. The site workflow permits automated interaction.
 10. The final submission is a normal job application, not a contract, paid service, or unrelated sales funnel.
-11. The run is still inside `MAX_APPLICATIONS_PER_RUN=5` and `MAX_APPLICATIONS_PER_DAY=10`.
+11. The run is still inside `MAX_APPLICATIONS_PER_RUN=1` and `MAX_APPLICATIONS_PER_DAY=10`.
 
 A passing score does not override `REVIEW_ONLY`.
 

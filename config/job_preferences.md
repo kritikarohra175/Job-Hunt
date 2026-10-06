@@ -152,7 +152,7 @@ Prefer the employer career page or the ATS page when the same job appears on a b
 
 The only numeric caps are in `config/runtime.md`:
 
-MAX_APPLICATIONS_PER_RUN=5
+MAX_APPLICATIONS_PER_RUN=1
 MAX_APPLICATIONS_PER_DAY=10
 
 Auto-apply threshold: 85/100, and only when `config/runtime.md` says `RUN_MODE=LIVE` and every hard stop is clear.

@@ -6,7 +6,7 @@ Use repository `kritikarohra175/Job-Hunt` and branch `main`. Do not point the re
 
 The instructions must be the current contents of `prompts/daily_automation_prompt.md`.
 
-Keep `config/runtime.md` at `RUN_MODE=REVIEW_ONLY` for review tests. That mode never submits an application.
+`config/runtime.md` is `RUN_MODE=LIVE` with `MAX_APPLICATIONS_PER_RUN=1`. Submit only when every application rule and hard stop is satisfied.
 
 Schedule, when the automation is turned on: weekdays at 09:00 and 17:00 `Asia/Kolkata`.
 
