@@ -17,6 +17,8 @@ AUTO_APPLY_THRESHOLD=85
 
 `REVIEW_ONLY` never submits an application and never clicks a final Submit or Apply button. `LIVE` may submit only when every application rule and hard stop is satisfied.
 
+LinkedIn and Naukri are not submitted by the run when the listing cannot be fully accessed or safely automated. An eligible listing is recorded as `Manual Apply` with its URL, score, deadline, salary, and hold reason.
+
 ## Tracker
 
 Google Sheets is the application-history authority. `data/application_tracker.csv` is a backup cache. Deduplication checks both, and a GitHub commit of the CSV is not enough.

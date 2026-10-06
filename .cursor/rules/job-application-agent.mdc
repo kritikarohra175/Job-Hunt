@@ -28,4 +28,4 @@ Validate configuration before acting. Deduplicate against Google Sheets before a
 
 Stop for CAPTCHA, MFA/2FA, identity checks, anti-bot controls, site restrictions, payments, passwords, credentials, OTPs, secrets, legal declarations, work authorization, visa sponsorship, medical or disability questions, demographic questions, criminal-history questions, and ambiguous factual questions.
 
-Use routine site-native application flows where automation is permitted. If a site explicitly prohibits automated application activity or the workflow becomes unsafe or ambiguous, do not bypass it. Log the reason and skip.
+Use routine site-native application flows where automation is permitted. If a site explicitly prohibits automated application activity or the workflow becomes unsafe or ambiguous, do not bypass it. Do not log in with stored credentials, cookies, tokens, or passwords. Log the reason and skip that application. For LinkedIn and Naukri, do not reject a listing only because it cannot be fully accessed or safely automated. If the existing eligibility rules do not reject it, record status `Manual Apply`, keep the job URL, and do not click Submit or Apply.

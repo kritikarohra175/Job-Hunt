@@ -58,7 +58,7 @@ Never overwrite the master resume.
 
 ## Safety and authorization
 
-Do not bypass CAPTCHA, MFA/2FA, identity checks, anti-bot measures, paywalls, payments, access controls, or site restrictions. Do not enter or store passwords, credentials, OTPs, or secrets. Do not scrape or automate a site in a way that violates its terms or access rules. If automation is prohibited or blocked, record the reason and stop that application.
+Do not bypass CAPTCHA, MFA/2FA, identity checks, anti-bot measures, paywalls, payments, access controls, or site restrictions. Do not enter or store passwords, credentials, OTPs, or secrets. Do not log in with stored credentials, cookies, tokens, or passwords. Do not scrape or automate a site in a way that violates its terms or access rules. If automation is prohibited or blocked, record the reason and stop that application. A LinkedIn or Naukri listing that cannot be fully accessed or safely automated is not rejected for that limit. When the existing eligibility rules do not reject it, record it as `Manual Apply` under `config/application_rules.md` and do not click Submit or Apply.
 
 Stop rather than guess on legal declarations, work authorization, visa sponsorship, demographic questions, medical or disability questions, criminal-history questions, or any other sensitive or ambiguous factual question.
 
