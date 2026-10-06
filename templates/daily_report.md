@@ -14,9 +14,17 @@ Relevant:
 Qualified:
 Prepared:
 Applications submitted:
+Manual Apply:
 Review required:
 Rejected:
 Blocked:
+
+## Manual Apply
+
+Open these job URLs and complete the application. The run did not log in and did not click Submit or Apply.
+
+| Company | Role | Location | Score | Salary | Deadline | Source | Job URL | Hold reason | Resume PDF | PDF validated |
+|---|---|---|---:|---|---|---|---|---|---|---|
 
 ## Applications submitted
 
