@@ -173,6 +173,30 @@ def main() -> int:
     check("below ₹20,000/month" in preferences, "India salary floor reject rule is present")
     check("overlapping ₹20,000/month" in preferences, "overlapping salary review rule is present")
     check("supplemental" in preferences.casefold() and "LinkedIn" in preferences, "job search uses multiple sources")
+    site_policy = read("config/site_policy.md") if (REPO_ROOT / "config/site_policy.md").is_file() else ""
+    red_flags = read("config/red_flags.md") if (REPO_ROOT / "config/red_flags.md").is_file() else ""
+    report = read("templates/daily_report.md") if (REPO_ROOT / "templates/daily_report.md").is_file() else ""
+    tracker_header = ""
+    tracker_path = REPO_ROOT / "data" / "application_tracker.csv"
+    if tracker_path.is_file():
+        tracker_header = tracker_path.read_text(encoding="utf-8").splitlines()[0]
+    check("Manual Apply" in rules and "Naukri" in rules, "application rules define LinkedIn and Naukri Manual Apply")
+    check(
+        "Do not log in with stored credentials, cookies, tokens, or passwords." in rules,
+        "Manual Apply forbids stored-credential login",
+    )
+    check(
+        "Do not click a final Submit or Apply control on LinkedIn or Naukri." in rules,
+        "Manual Apply forbids the final LinkedIn and Naukri submit control",
+    )
+    check("application_deadline" in rules and "rejection_reason" in rules, "Manual Apply records deadline and hold reason")
+    check("Manual Apply" in site_policy and "Naukri" in site_policy, "site policy routes inaccessible LinkedIn and Naukri listings to Manual Apply")
+    check("CAPTCHA" in red_flags and "Blocked - Review" in red_flags, "hard stops still stop and record Blocked - Review")
+    check("Manual Apply" in red_flags and "content hard stop" in red_flags, "LinkedIn and Naukri access limits stay separate from content hard stops")
+    check("## Manual Apply" in report and report.find("## Manual Apply") < report.find("## Applications submitted"), "daily report lists Manual Apply before submitted applications")
+    check("Manual Apply" in prompt and "Do not click Submit or Apply" in prompt, "daily prompt keeps inaccessible LinkedIn and Naukri listings for manual action")
+    check("application_deadline" in tracker_header, "tracker cache has an application deadline column")
+    check("Below 70: reject." in scoring and "70–84: prepare and record as review." in scoring, "scoring decision bands are unchanged")
     check("Vadodara" in preferences and "Dubai" in preferences and "Toronto" in preferences, "approved locations are present")
     check(".venv/bin/python" in prompt, "daily prompt uses the project virtualenv")
     check("both the Google Sheet and the local CSV" in prompt, "daily prompt deduplicates against both trackers")

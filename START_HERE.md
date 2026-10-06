@@ -15,3 +15,5 @@ The only authoritative resume is `reference/Karina_Rohra_Digital_Marketing_Resum
 The application tracker ID, tab, and Drive resume file ID are in `config/runtime.md`. Google Sheets is the authority. `data/application_tracker.csv` is a backup cache.
 
 The daily run instructions are `prompts/daily_automation_prompt.md`.
+
+LinkedIn and Naukri listings that cannot be fully accessed or safely automated stay in the report as `Manual Apply` when the existing eligibility rules do not reject them. Open the job URL and finish those applications. The run does not log in and does not click Submit or Apply on those platforms.

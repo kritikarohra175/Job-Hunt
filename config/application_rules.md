@@ -131,3 +131,47 @@ If a form breaks, a field is ambiguous, or automation is blocked:
 - Do not bypass the control.
 - Save the job URL and the failure reason.
 - Mark status `Blocked - Review`.
+
+A LinkedIn or Naukri listing that cannot be fully accessed or safely automated is the exception in the next section. Do not mark that listing `Blocked - Review` and do not reject it for the access or automation limit.
+
+## LinkedIn and Naukri — Manual Apply
+
+Use this path only for LinkedIn and Naukri. It does not change scoring, eligibility, salary, experience, location, hard-stop actions, volume caps, or `RUN_MODE`.
+
+A listing is on this path when the source is LinkedIn or Naukri and any of the following is true:
+
+- The full listing or application cannot be accessed.
+- Completing it would require login or stored credentials, cookies, tokens, or passwords.
+- Completing it would require bypassing CAPTCHA, MFA, an anti-bot system, an identity check, or an access restriction.
+- The platform disallows automated application, or the normal Apply flow cannot be finished safely.
+
+When that is true:
+
+1. Do not reject the listing because of that access or automation limit.
+2. Do not log in with stored credentials, cookies, tokens, or passwords.
+3. Do not bypass CAPTCHA, MFA, anti-bot systems, identity checks, or access restrictions.
+4. Do not click a final Submit or Apply control on LinkedIn or Naukri. This is true in both `REVIEW_ONLY` and `LIVE`.
+5. Keep evaluating when enough information is already available. Apply the existing filters and `config/job_scoring.md` to that information. Do not adjust the score because the status will be Manual Apply.
+6. If those existing rules reject the role, reject it. Record the eligibility reason. Do not relabel an eligibility rejection as Manual Apply.
+7. If the role passes the existing filters and scores 70 or above, including a role that existing rules would prepare or send to review, set `application_status` to `Manual Apply`. Put every existing review reason in the hold reason. A 70–84 score, a salary overlap, or an unresolved non-rejecting field stays that kind of review inside the hold reason. It does not become a rejection, and it does not become a LIVE submission.
+8. If the public information is not enough to apply a mandatory filter or to score honestly, do not invent the missing facts and do not reject the listing for the access limit. Set `application_status` to `Manual Apply`, leave `match_score` blank, and set the hold reason to the missing facts.
+9. When the role is eligible under step 7, generate and validate the tailored resume PDF. That packet counts toward `MAX_APPLICATIONS_PER_RUN`. After the cap is reached, stop creating new packets, keep logging further Manual Apply rows, and state in the hold reason that the resume was not generated because the per-run cap was reached.
+10. For a role on step 7, prepare only non-sensitive answers that already exist in `config/answer_bank.md`. Copy those approved answers into `screening_questions` and into `output/manual_apply/<Company>_<Role>_answers.md`. Do not answer a hard-stop question that the answer bank does not answer exactly. Leave that field blank and name it in the hold reason.
+
+Content hard stops in `config/red_flags.md` still stop the answer. Do not guess, bypass, or submit. On LinkedIn and Naukri, a visible content hard stop stays `Blocked - Review`. Access and automation barriers on those two platforms use `Manual Apply` instead.
+
+Record every Manual Apply row with:
+
+- job URL in `job_url`
+- company
+- role in `job_title`
+- location
+- score in `match_score` when it can be scored without inventing facts
+- deadline in `application_deadline` when the posting states one, and the same date in `notes`
+- stated salary information in `salary_range`; leave it blank when salary is not stated
+- rejection or hold reason in `rejection_reason`
+- source as `LinkedIn` or `Naukri`
+
+Also set `application_method` to `Manual`. Leave `date_applied`, `confirmation_id`, and `confirmation_url` empty. A Manual Apply row is not a submission.
+
+If the same job is already in the tracker, update that row instead of adding a duplicate.

@@ -59,6 +59,7 @@ The ID is also recorded in `config/runtime.md`. It was read from the connected G
 
 Use the official Google Sheets plugin. Do not hard-code credentials.
 Append or update one row per opportunity.
+The `Applications` tab includes `application_deadline` for a deadline the posting states. Manual Apply rows use status `Manual Apply` and put the hold reason in `rejection_reason`.
 Deduplicate against this Sheet. Do not treat a GitHub commit of the CSV as application history.
 
 If the Sheet is not configured or cannot be read, mark deduplication incomplete and do not submit.

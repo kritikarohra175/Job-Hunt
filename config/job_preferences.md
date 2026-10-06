@@ -146,7 +146,7 @@ Attempt these sources when the site permits ordinary search under `config/site_p
 - LinkedIn, Indeed, and Glassdoor for New York
 - LinkedIn for Seoul, plus public listings on Saramin or JobKorea when the posting can be read without claiming language fluency
 
-Prefer the employer career page or the ATS page when the same job appears on a board. If a source blocks automation or disallows it, record the reason and continue with the remaining sources. Do not create extra accounts, rotate identities, or bypass a restriction.
+Prefer the employer career page or the ATS page when the same job appears on a board. If a source blocks automation or disallows it, record the reason and continue with the remaining sources. A LinkedIn or Naukri listing that cannot be fully accessed or safely automated is not rejected for that reason. Evaluate it when enough information is public, and follow the Manual Apply path in `config/application_rules.md`. Do not create extra accounts, rotate identities, or bypass a restriction. Do not log in to LinkedIn or Naukri with stored credentials, cookies, tokens, or passwords.
 
 ## Application volume
 
