@@ -314,8 +314,38 @@ def main() -> int:
     )
     check(
         self_test.returncode == 0,
-        "PDF builder self-test generates and validates a real PDF"
+        "PDF builder self-test generates, validates, rejects corrupt text layers and regenerates ATS-safe PDFs"
         + (f" ({self_test.stderr.strip()})" if self_test.returncode else ""),
+    )
+
+    master_ats = subprocess.run(
+        [
+            sys.executable,
+            str(REPO_ROOT / "scripts" / "build_resume_pdf.py"),
+            "--validate",
+            "reference/Karina_Rohra_Digital_Marketing_Resume_FINAL.pdf",
+            "--require-text",
+            "Ofcoursesocial",
+        ],
+        cwd=REPO_ROOT,
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+    check(
+        master_ats.returncode == 0,
+        "master PDF passes the machine-readable ATS text-layer check"
+        + (f" ({master_ats.stdout.strip()} {master_ats.stderr.strip()})" if master_ats.returncode else ""),
+    )
+
+    tailoring = read("config/resume_tailoring.md") if (REPO_ROOT / "config/resume_tailoring.md").is_file() else ""
+    check(
+        "machine-readable" in tailoring and "machine-readable" in prompt and "machine-readable" in rules,
+        "tailoring rules, daily prompt, and application rules require the machine-readable PDF check",
+    )
+    check(
+        "Do not upload or store a failed PDF" in tailoring and "Do not upload or store a failed PDF" in prompt,
+        "failed PDFs are never uploaded or stored",
     )
 
     incomplete_files = []
