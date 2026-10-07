@@ -143,14 +143,30 @@ The JSON file is builder input only. Never attach it.
 
 Use a filename like `Karina_Rohra_<Company>_<Role>.pdf`.
 Keep the local PDF under `output/resumes/`.
-When Google Drive is available, also store that PDF in the Tailored Resumes folder named by `DRIVE_TAILORED_RESUMES_FOLDER_ID` in `config/runtime.md`.
+Make sure the headline or summary in the structured resume names the exact target job title given in `tailoring.role`; the builder refuses a resume that never mentions it.
+When Google Drive is available, and only after the PDF has passed the validation in step 8, also store that PDF in the Tailored Resumes folder named by `DRIVE_TAILORED_RESUMES_FOLDER_ID` in `config/runtime.md`.
 The only Drive resume that may be read as a source is `DRIVE_MASTER_RESUME_FILE_ID` in `config/runtime.md`. It is a byte-identical copy of `reference/Karina_Rohra_Digital_Marketing_Resume_FINAL.pdf`. Do not open, merge, or attach any other resume file from Drive.
 Never overwrite `reference/Karina_Rohra_Digital_Marketing_Resume_FINAL.pdf` or the Master Resume folder.
 Never attach Markdown, TXT, JSON, or a draft file as the resume.
 
 ## 8. Validate PDF
 
-The builder must confirm that the PDF opens and that its text contains the candidate name and the tailored summary. Do not attach a PDF that fails validation.
+Every tailored PDF must pass both a visual and a machine-readable check before it is used, uploaded, or stored in the Tailored Resumes Google Drive folder. A resume must be readable by a normal human AND cleanly extractable by an ATS.
+
+The builder performs this automatically for each PDF it writes:
+
+1. Confirms the PDF opens.
+2. Extracts its text with the existing PDF parser.
+3. Runs an independent text-extraction sanity check and audits the fonts for Unicode mappings.
+4. Verifies that `Karina Rohra`, the target job title, `Digital Marketing`, the relevant Social Media / SEO / Content Marketing keywords, the employers and experience titles, and the education entries are extracted correctly.
+5. Detects character-encoding corruption, malformed words, replacement characters, unexpected control characters, and other extraction anomalies.
+6. Rejects the PDF if text that looks correct visually is corrupted or unreadable in the text layer, or if important ATS keywords are missing or corrupted.
+7. If the PDF fails, regenerates it with the ATS-safe text/font profile and validates it again.
+8. Deletes a PDF that fails. Do not upload or store a failed PDF.
+
+The builder prints `ATS check PASS` with the font profile, fonts, and the number of verified snippets, or `ATS check FAIL` with each problem. Add `--report output/resumes/<job>.ats_check.json` to keep the result as evidence, and record it under PDF validation results in the daily report. To re-check an existing PDF run `.venv/bin/python scripts/build_resume_pdf.py --validate <pdf> --require-text "<Role>"`.
+
+Only a PDF that passes both checks may be attached to an application or offered for a Manual Apply opportunity. If no profile passes, mark the job `Blocked - Review` with the reported problems and do not use any resume file for it.
 
 ## 9. Prepare application
 

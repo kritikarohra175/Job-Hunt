@@ -53,6 +53,7 @@ Tailor only from verified candidate facts.
 Generate a structured resume that matches `scripts/resume_schema.json`.
 Generate a real PDF with `scripts/build_resume_pdf.py`.
 Validate that the PDF opens and contains the candidate name and the tailored content.
+Validate that the PDF is machine-readable: the builder extracts the text with two independent passes, audits the fonts, checks that the candidate name, target job title, `Digital Marketing`, the relevant Social Media / SEO / Content Marketing keywords, employers, and education extract correctly, and rejects any text-layer corruption. A failed PDF is deleted and regenerated with the ATS-safe profile. Only a PDF that passes both the visual and the machine-readable check may be used, uploaded, or stored in the Tailored Resumes Drive folder.
 Never attach Markdown, TXT, or JSON as the resume.
 Never overwrite the master resume.
 

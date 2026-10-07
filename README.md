@@ -27,7 +27,11 @@ The spreadsheet ID, tab, and Drive resume file ID are in `config/runtime.md`.
 
 ```
 .venv/bin/python scripts/validate_config.py
+.venv/bin/python scripts/build_resume_pdf.py --self-test
+.venv/bin/python scripts/build_resume_pdf.py --validate <tailored>.pdf --require-text "<Role>"
 ```
+
+Every tailored PDF must pass a visual check and a machine-readable ATS text-layer check before it is used or stored; the builder runs both and regenerates with an ATS-safe profile when needed. See `config/resume_tailoring.md`.
 
 PDF dependencies are listed in `requirements.txt` and installed by `.cursor/environment.json`.
 

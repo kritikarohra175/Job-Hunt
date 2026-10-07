@@ -20,7 +20,7 @@ During `REVIEW_ONLY`:
 2. The job passes role, experience, location, work arrangement, salary, and quality filters.
 3. The job score is at least `AUTO_APPLY_THRESHOLD=85`.
 4. The exact job has not previously been applied to, based on the Google Sheet tracker.
-5. The tailored resume PDF has been created and validated.
+5. The tailored resume PDF has been created and has passed both the visual and the machine-readable validation.
 6. No factual uncertainty remains in the application fields.
 7. No sensitive, legal, or authorization question requires guessing.
 8. No CAPTCHA, MFA/2FA, identity check, payment, or anti-bot barrier must be bypassed.
@@ -75,6 +75,7 @@ Tailor only from `config/master_profile.md` and `reference/Karina_Rohra_Digital_
 Do not use any older resume version.
 
 Generate a structured resume, then a real PDF, then validate that PDF before it is attached.
+The PDF must pass both the visual check and the machine-readable ATS text-layer check described in `config/resume_tailoring.md`. A PDF that fails is deleted and regenerated with the ATS-safe profile; it is never attached, uploaded, or stored in the Tailored Resumes Drive folder.
 Never attach Markdown, TXT, or JSON as the resume.
 Never overwrite the master resume.
 
